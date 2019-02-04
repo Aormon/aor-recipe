@@ -17,7 +17,7 @@ import RecipePage from './components/Recipe/RecipePage';
 
 const client = new ApolloClient({
 
-    uri: "https://aor-react-apollo-recipes.herokuapp.com/graphql",
+    uri: "https://aor-recipe.herokuapp.com/graphql",
     //uri: 'http://localhost:4000/graphql',
     fetchOptions:{
         credentials: 'include'
