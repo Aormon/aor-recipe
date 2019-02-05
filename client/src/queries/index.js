@@ -76,7 +76,11 @@ query($username: String!){
     getUserRecipes(username: $username){
         _id
         name
+        imageUrl
         likes
+        description
+        category
+
     }
 }
 `;
@@ -107,6 +111,29 @@ mutation($_id: ID!){
 }
 `;
 
+
+export const UPDATE_USER_RECIPE=gql`
+mutation($_id:ID!,
+    $name:String!, 
+    $imageUrl: String!,
+    $category: String!,
+    $description:String!){
+    updateUserRecipe(_id:$_id,
+        name:$name, 
+        imageUrl:$imageUrl,
+        category: $category,
+        description:$description 
+        ){
+            _id
+            name
+            imageUrl
+            likes
+            description
+            category
+        }
+        
+}
+`;
 export const LIKE_RECIPE =gql`
 mutation($_id:ID!,$username:String!){
     likeRecipe(_id:$_id,username:$username){
