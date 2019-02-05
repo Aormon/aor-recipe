@@ -89,8 +89,10 @@ class LikeRecipe extends Component {
                 {likeRecipe=>
 
                     username && (
-                        <button onClick={()=> this.handleClick(likeRecipe,unlikeRecipe)}>
-                        {liked ? 'UnLink':'Like'}
+                        <button 
+                            className="like-button"
+                            onClick={()=> this.handleClick(likeRecipe,unlikeRecipe)}>
+                        {liked ? 'UnLiked':'Like'}
                         </button>
                     )
 

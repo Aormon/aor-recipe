@@ -3,6 +3,7 @@ import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import {GET_USER_RECIPES,DELETE_USER_RECIPE, GET_ALL_RECIPES, GET_CURRENT_USER} from '../../queries';
+import Spinner from '../Spinner';
 
 const handleDelete = deleteUserRecipe =>{
     const confirmDelete= window.confirm('Are you sure you want to delete this recipe?');
@@ -16,7 +17,7 @@ const handleDelete = deleteUserRecipe =>{
 const UserRecipes = ({ username })=>(
     <Query query={GET_USER_RECIPES} variables={{ username }}>
         {({ data, loading, error})=>{
-            if(loading) return <div>Loading</div>
+            if(loading) return <Spinner />
             if(error) return <div>Error</div>
             //console.log(data);
             return(
